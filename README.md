@@ -1,299 +1,177 @@
-Black Pepper Soil Health Monitoring and Fertilizer Recommendation System using IoT and AI
-Target Users
+# 🌱 Black Pepper Soil Health Monitoring & Fertilizer Recommendation System using IoT & AI
+
+[![React Native](https://img.shields.io/badge/React%20Native-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactnative.dev/) 
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) 
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![ESP32](https://img.shields.io/badge/ESP32-0F9D58?style=for-the-badge&logo=arduino&logoColor=white)](https://www.espressif.com/en/products/socs/esp32)
 
-Small-scale black pepper farmers in Sri Lanka, especially in rural areas with limited internet access.
+---
 
-1. Key Mobile Application Features (React Native – Mobile Web/App)
-1.1 Real-Time Soil Data Monitoring
+## 🌟 Overview
+This project is a **soil health monitoring and fertilizer recommendation system** for **small-scale black pepper farmers in Sri Lanka**, especially those in rural areas with limited internet access.  
+It combines **IoT sensors**, a **mobile app**, and **AI/ML models** to provide:  
 
-The mobile application connects to an IoT soil sensor device and collects:
+- Real-time soil data  
+- Soil health scores  
+- Crop-specific fertilizer recommendations  
 
-Nitrogen (N)
+---
 
-Phosphorus (P)
+## 🎯 Target Users
+- Small-scale black pepper farmers  
+- Farmers with limited technical knowledge or internet connectivity  
 
-Potassium (K)
+---
 
-Soil pH
+## 📱 Key Mobile Application Features
 
-Soil moisture
+### 1️⃣ Real-Time Soil Data Monitoring
+- Collects data from IoT soil sensors:
+  - 🟢 Nitrogen (N), Phosphorus (P), Potassium (K)  
+  - 🟢 Soil pH, moisture, temperature  
+  - 🌍 GPS location of the pepper field
+- **Color-coded cards** for easy visualization:
+  - 🟢 Green = Good  
+  - 🟡 Yellow = Moderate  
+  - 🔴 Red = Critical  
 
-Soil temperature
+### 2️⃣ Soil Health Score (0–100)
+- Single numeric score for soil condition  
+- Categories:
+  - 🟢 80–100 → Healthy soil  
+  - 🟡 60–79 → Moderate  
+  - 🔴 Below 60 → Needs attention  
 
-GPS location of the pepper field
+### 3️⃣ Fertilizer Recommendations (AI/ML)
+- Predicts nutrient depletion  
+- Suggests fertilizer type, quantity & timing  
+- Example:  
+> “Apply 120g Urea + 90g MOP per vine during vegetative stage.”  
 
-📱 Data is shown in simple cards with color indicators (Green = Good, Yellow = Moderate, Red = Critical).
+### 4️⃣ Pre-Planting & Post-Planting Monitoring
+- 🌱 **Pre-planting:** Checks soil suitability & suggests corrections  
+- 🌿 **Post-planting:** Monitors growth stages:
+  - Establishment  
+  - Vegetative  
+  - Flowering  
+  - Berry development  
 
-1.2 Soil Health Score (0–100)
+### 5️⃣ Offline-First Capability
+- Works **without internet**  
+- Stores soil data locally and syncs automatically when online  
 
-A single numeric score calculated using soil parameters.
+### 6️⃣ Historical Data & Trends
+- View soil health trends & nutrient patterns  
+- Displayed as 📈 line charts and 📊 bar charts  
 
-Helps farmers understand soil condition easily without technical knowledge.
+### 7️⃣ Multilingual & Farmer-Friendly UI
+- Supports **Tamil / Sinhala / English**  
+- Minimal text, clear icons, and color indicators  
 
-Score categories:
+---
 
-80–100 → Healthy soil
+## 🖥 Screen-Wise UI Flow
 
-60–79 → Moderate
+<details>
+<summary>Click to Expand Screens</summary>
 
-Below 60 → Needs attention
+### 🏠 Home Screen (Dashboard)
+- Shows soil health score, current status, connectivity, last synced  
+- Buttons: View Soil Data, Get Recommendations, View History  
 
-1.3 Black Pepper–Specific Fertilizer Recommendations
+### 🌡 Sensor Data Screen
+- Displays N, P, K, pH, moisture, temperature, GPS  
+- Color-coded cards for each parameter  
 
-Uses AI/ML models to:
+### 📋 Recommendations Screen
+- Fertilizer recommendations per vine/hectare  
+- Suggests suitable black pepper variety  
 
-Predict nutrient depletion
+### 📊 History & Trends Screen
+- Date-wise soil data, soil health trends, nutrient usage  
+- Line & bar charts  
 
-Recommend fertilizer type, quantity, and application time
+### ⚙️ Settings Screen
+- Language selection  
+- Sync settings  
+- Growth stage selection  
+- IoT sensor pairing  
 
-Recommendations are crop-specific, not generic.
+</details>
 
-Example:
+---
 
-“Apply 120g Urea + 90g MOP per vine during vegetative stage.”
+## 🏗 System Architecture
 
-1.4 Pre-Planting & Post-Planting Monitoring
+<details>
+<summary>Click to Expand Architecture</summary>
 
-Pre-planting:
-Checks soil suitability and suggests soil correction.
+### High-Level Architecture
 
-Post-planting:
-Continuous monitoring throughout growth stages:
-
-Establishment stage
-
-Vegetative stage
-
-Flowering stage
-
-Berry development stage
-
-1.5 Offline-First Capability
-
-Works without internet.
-
-Soil data stored locally on the phone.
-
-Automatically syncs to the server when internet becomes available.
-
-1.6 Historical Data & Trend Visualization
-
-Farmers can view:
-
-Soil health trend over weeks/months
-
-Nutrient depletion patterns
-
-Simple line graphs and bar charts.
-
-1.7 Multilingual & Farmer-Friendly UI
-
-Supports Tamil / Sinhala / English
-
-Uses:
-
-Icons
-
-Minimal text
-
-Clear color indicators
-
-2. Screen-Wise UI Flow (Mobile Application)
-2.1 Home Screen (Dashboard)
-
-Purpose: Quick overview
-
-Displays:
-
-Soil Health Score
-
-Current soil status
-
-Connectivity status (Online / Offline)
-
-Last synced time
-
-Buttons:
-
-View Soil Data
-
-Get Recommendations
-
-View History
-
-2.2 Sensor Data Screen
-
-Purpose: Real-time monitoring
-
-Displays:
-
-N, P, K values
-
-pH, moisture, temperature
-
-GPS location (map or coordinates)
-
-Each value shown in color-coded cards.
-
-2.3 Recommendations Screen
-
-Purpose: Decision support
-
-Shows:
-
-Fertilizer recommendation
-
-Dosage per vine/hectare
-
-Application timing
-
-Suitable black pepper variety suggestion
-
-Example:
-
-“Panniyur-1 variety recommended for this soil condition.”
-
-2.4 History & Trends Screen
-
-Purpose: Long-term soil analysis
-
-Features:
-
-Date-wise soil data
-
-Soil Health Score trends
-
-Nutrient usage history
-
-Displayed using:
-
-Line charts
-
-Bar graphs
-
-2.5 Settings Screen
-
-Purpose: App configuration
-
-Options:
-
-Language selection
-
-Sync settings
-
-Growth stage selection
-
-Device pairing (IoT sensor)
-
-3. System Architecture Explanation
-High-Level Architecture
 IoT Sensors → Mobile App → Backend Server → AI/ML Engine → Mobile App
 
-3.1 IoT Layer
 
-Low-cost soil sensors connected to ESP32
+### IoT Layer
+- ESP32 + sensors (NPK, pH, Moisture, Temperature)  
+- Sends data via Bluetooth (offline) or Wi-Fi (online)  
 
-Collects soil parameters
+### Mobile App Layer
+- React Native mobile app  
+- Data collection, visualization, offline storage  
 
-Sends data via:
+### Backend Layer
+- Node.js / Express REST API  
+- Data storage, user auth, AI inference requests  
 
-Bluetooth (offline)
+### AI/ML Engine
+- Predicts nutrient depletion & fertilizer recommendation  
+- Models: Random Forest, XGBoost  
+- Deployment: TensorFlow Lite / ONNX  
 
-Wi-Fi (when available)
+### Database
+- Local offline: SQLite  
+- Cloud: Firebase Firestore / MongoDB  
 
-3.2 Mobile Application Layer
+</details>
 
-Built using React Native
+---
 
-Acts as:
+## 💻 Technology Stack
 
-Data collector
+| Layer | Component | Technology |
+|-------|-----------|-----------|
+| **Frontend** | Mobile UI | React Native |
+|  | Charts | Victory Charts / Recharts |
+|  | Offline Storage | AsyncStorage / SQLite |
+|  | Language Support | i18n |
+| **IoT Hardware** | Microcontroller | ESP32 |
+|  | Sensors | NPK, pH, Moisture, DHT11 |
+|  | Communication | BLE |
+| **Backend** | Server | Node.js / Express |
+|  | Hosting | Firebase / AWS Free Tier |
+| **Database** | Local | SQLite |
+|  | Cloud | Firebase Firestore / MongoDB |
+| **AI / ML** | Model Training | Python (Scikit-learn) |
+|  | Models | Random Forest, XGBoost |
+|  | Deployment | TensorFlow Lite / ONNX |
 
-Visualization platform
+---
 
-Offline storage unit
+## 🔄 Simple Workflow
+1. 🌱 Sensors collect soil data  
+2. ⚡ ESP32 sends data to mobile app  
+3. 📱 App stores data locally (offline support)  
+4. 🌐 Data syncs to backend when online  
+5. 🤖 AI model analyzes soil & growth stage  
+6. 💡 Fertilizer recommendations are generated  
+7. 📊 Results displayed in farmer-friendly format  
 
-3.3 Backend Layer
+---
 
-Lightweight REST API
+## 👤 Author
+**Ragul Krishna** – Final Year IT Student (IoT & AI Integration)
 
-Handles:
+---
 
-Data storage
-
-User authentication
-
-AI inference requests
-
-3.4 AI/ML Engine
-
-Uses trained ML models for:
-
-Nutrient depletion prediction
-
-Fertilizer recommendation
-
-Variety suitability analysis
-
-Models:
-
-Random Forest
-
-XGBoost
-
-Deployed as:
-
-TensorFlow Lite / ONNX (mobile-ready)
-
-3.5 Database
-
-Stores:
-
-Soil readings
-
-Historical data
-
-Recommendations
-
-4. Recommended Technology Stack
-Frontend (Mobile Application)
-Component	Technology
-Mobile UI	React Native
-Charts	Victory Charts / Recharts
-Offline Storage	AsyncStorage / SQLite
-Language Support	i18n
-IoT Hardware
-Component	Technology
-Microcontroller	ESP32
-Sensors	NPK, pH, Moisture, DHT11
-Communication	Bluetooth Low Energy
-Backend
-Component	Technology
-Server	Node.js / Express
-API	REST
-Hosting	Firebase / AWS Free Tier
-Database
-Type	Technology
-Local (offline)	SQLite
-Cloud	Firebase Firestore / MongoDB
-AI / ML
-Task	Technology
-Model Training	Python (Scikit-learn)
-Models	Random Forest, XGBoost
-Deployment	TensorFlow Lite / ONNX
-Inference	On-device or backend
-5. Simple System Workflow (For Final Report)
-
-Soil sensors collect data from black pepper field
-
-ESP32 sends data to the mobile application
-
-Mobile app stores data locally (offline supported)
-
-Data syncs to backend when internet is available
-
-AI model analyzes soil data and crop stage
-
-Fertilizer recommendations are generated
-
-Results are displayed in a simple farmer-friendly format
+## 📝 License
+MIT License
