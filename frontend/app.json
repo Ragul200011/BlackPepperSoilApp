@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "BlackPepperSoilApp",
+    "slug": "black-pepper-soil-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "plugins": [
+      "expo-router"
+    ],
+    "android": {
+      "package": "com.anonymous.blackpeppersoilapp"
+    }
+  }
+}
